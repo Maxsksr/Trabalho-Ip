@@ -3,7 +3,7 @@ import random
 
 @st.cache_data
 def escolher_pais():
-    paises = ['Brasil', 'Argentina']
+    paises = ['Suriname', 'Brasil', 'Argentina', 'Uruguai', 'Peru', 'Colômbia', 'Bolívia', 'Paraguai', 'Equador', 'Guiana', 'Chile', 'Venezuela']
     return random.choice(paises).lower()
 
 def embaralhar_palavra(palavra):
