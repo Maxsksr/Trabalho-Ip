@@ -3,7 +3,7 @@ import random
 
 @st.cache_data
 def escolher_pais():
-    paises = ['Suriname', 'Brasil', 'Argentina', 'Uruguai', 'Peru', 'Colômbia', 'Bolívia', 'Paraguai', 'Equador', 'Guiana', 'Chile', 'Venezuela']
+    paises = ['Brasil', 'Argentina']
     return random.choice(paises).lower()
 
 def embaralhar_palavra(palavra):
@@ -12,13 +12,9 @@ def embaralhar_palavra(palavra):
     return ''.join(letras)
 
 def main():
-    tentativas_restantes = 3
-    pontuacao = 0
-    
     st.title("Jogo de Anagrama")
-    st.write(f"Pontuação: {pontuacao}")
-    st.text(f"Tentativas restantes: {tentativas_restantes}")
 
+    tentativas_restantes = 3
     jogo_iniciado = False
 
     if not jogo_iniciado:
@@ -43,13 +39,6 @@ def main():
                 else:
                     tentativas_restantes -= 1
                     feedback_placeholder.warning("Palpite incorreto. Tente novamente!")
-                if tentativas_restantes == 0:
-                        st.error("Número máximo de tentativas alcançados. Jogo encerrado")
-                        st.cache_data.clear()
-                        tentativas_restantes = 3
-                if pontuacao == 12:
-                    st.success("Você ganhou. Parabéns!")
-                    st.cache_data.clear()
-                    tentativas_restantes = 3
-if __name__ == "_main_":
+
+if __name__ == "__main__":
     main()
